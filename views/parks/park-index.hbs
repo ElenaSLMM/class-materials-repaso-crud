@@ -1,0 +1,18 @@
+<div class="container coasters-index">
+
+  <a href="/park/new-park" class="btn btn-dark">Añadir un nuevo Parque</a>
+
+  <h1 style="font-weight: 100">Índice de parques</h1>
+{{#each parksArr}}
+  <hr>
+  <a href="/park/{{this._id}}" class="btn btn-sm btn-dark">Ver detalles</a>
+  <a href="/park/delete/{{this._id}}" class="btn btn-sm btn-dark">Eliminar</a>
+  <a href="/park/edit/{{this._id}}" class="btn btn-sm btn-dark">Editar</a>
+  <h4>Nombre del parque: {{this.name}}</h4>
+  <p>Descripción: {{this.description}}</p>
+  
+  <hr>
+
+{{/each}}
+
+</div>

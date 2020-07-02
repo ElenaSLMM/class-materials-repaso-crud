@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+
+            <h1>Editar {{coaster.name}}</h1>
+
+            <form action="/coaster/edit?id={{coaster._id}}" method="post">
+                <div class="form-group">
+                    <label for="name">Nombre de la montaña rusa</label>
+                    <input name="name" type="text" class="form-control" id="name" value="{{coaster.name}}">
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <input name="description" type="text" class="form-control" id="description" value="{{coaster.description}}">
+                </div>
+                <div class="form-group">
+                    <label for="length">Longitud</label>
+                    <input name="length" type="text" class="form-control" id="author" value="{{coaster.length}}">
+                </div>
+                <div class="form-group">
+                    <label for="inversions">Inversiones</label>
+                    <input name="inversions" type="number" class="form-control" id="inversions" value="{{coaster.inversions}}">
+                </div>
+                            
+                <div class="form-group">
+                <label for="park-list">Parque en el que se encuentra:</label>
+                <select name='park'  class="form-control" id="park-list">
+                    <option>Seleccionar</option>
+                    {{#each park}}
+                    <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+                </div>
+                <p>{{errorMsg}}</p>
+
+                <button type="submit" class="btn btn-dark">Editar</button>
+            </form>
+        </div>
+    </div>
+
+    <a class="btn btn-dark non-radius" href="/coaster">Volver</a>
+</div>
